@@ -1,26 +1,32 @@
 import mongoose from "mongoose";
 
 const meetSchema = new mongoose.Schema({
-    meetId :{
-        type: String,
-    },
     title: {
         type: String,
         required: true
     },
-    phone: {
-        type: Number,
+    description: {
+        type: String,
+    },
+    lat: {
+        type: String,
+    },
+    log: {
+        type: String,
+    },
+    date: {
+        type: String,
         required: true,
-        unique: true
     },
-    age: {
-        type: Number,
-        default: 25
+    time: {
+        type: String,
+        required: true  
     },
-    gender: {
-        type: String
+    duration: {
+        type: String,
+        required: true
     }
 });
 
-const Users = mongoose.model('users', userSchema);
-export{Users};
+const Meet = mongoose.model('meet', meetSchema);
+export{Meet};

@@ -1,32 +1,19 @@
 import express from 'express';
-import {  verifyUserHandler } from './src/controller/userControllers.js';
+import {  createMeetHandler, createMeetStatusHandler, createUserHandler, getMeetDetailsHandler, getMeetHandler, getSingleMeetHandler, getUserHandler, verifyUserHandler } from './src/controller/userControllers.js';
 
 const router = express.Router();
 //Signup and login
-router.post('/verifyUser', verifyUserHandler)
-// router.post('/createUser',createUserHandler);
-// router.post('/loginUser',loginUserHandler);
-// //Post CRUD operations
+router.post('/verifyUser', verifyUserHandler);
 
-// router.post('/createPost',createPostHandler);
-// router.get('/showPost',showPostHandler);
-// router.put('/updateUser/:id',updatePostHandler);
-// router.delete('/deleteUser/:id',deletePostHandler);
-// // router.post('/deletePost',deletePostHandler);
+// User creation 
+router.post('/createUser', createUserHandler);
+router.post('/getSingleUSer', getUserHandler);
 
-// //Comment CRUD operation
-// router.post('/createComment',createCommentHandler);
-// router.get('/showComment',showCommentHandler);
-// router.put('/updateComment/:id',updateCommentHandler);
-// router.delete('/deleteComment/:id',deleteCommentHandler);
-
-// // upvote and downvote for post and comment 
-// router.put('/upvotepost/:id',upVotePostHandler);
-// router.put('/downvotepost/:id',downVotePostHandler);
-
-// router.put('/upvotecomment/:id',upVoteCommentHandler);
-// router.put('/downvotecomment/:id',downVoteCommentHandler);
-
-
+// meeting details 
+router.post('/createMeet', createMeetHandler);
+router.post('/getAllMeet', getMeetHandler);
+router.post('/createMeetStatus', createMeetStatusHandler);
+router.post('/meetDetails', getMeetDetailsHandler);
+router.post('/getSingleMeeting', getSingleMeetHandler);
 
 export {router as routes};

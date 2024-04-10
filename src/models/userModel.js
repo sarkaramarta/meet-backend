@@ -1,10 +1,11 @@
 import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema({
-    _id :{
+    fname: {
         type: String,
+        required: true
     },
-    name: {
+    lname: {
         type: String,
         required: true
     },
@@ -13,11 +14,10 @@ const userSchema = new mongoose.Schema({
         required: true,
         unique: true
     },
-    age: {
-        type: Number,
-        default: 25
+    lat: {
+        type: String
     },
-    gender: {
+    log: {
         type: String
     }
 });
